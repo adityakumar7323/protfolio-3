@@ -1,0 +1,29 @@
+{
+  "name": "aditya-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Aditya Kumar Bhagat",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "serve": "python -m http.server 8000",
+    "deploy": "echo 'Deploy to your preferred hosting platform'",
+    "build": "echo 'No build step required - using CDN React'"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "tailwind",
+    "web-developer",
+    "frontend"
+  ],
+  "author": "Aditya Kumar Bhagat",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio"
+  },
+  "homepage": "https://yourdomain.com"
+}

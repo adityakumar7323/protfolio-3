@@ -204,8 +204,11 @@ const HeroSection = () => {
                     <div className="mb-8" data-aos="fade-up">
                         <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 p-1 animate-glow">
                             <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                <i className="fas fa-user text-4xl text-gray-600 dark:text-gray-400"></i>
-                                {/* Replace with actual image: <img src="./assets/images/profile.jpg" alt="Aditya Bhagat" className="w-full h-full rounded-full object-cover" /> */}
+                                <img src="./assets/images/Aditya.png" alt="Aditya Bhagat" className="w-full h-full rounded-full object-cover" onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    e.target.nextElementSibling.style.display = 'flex';
+                                }} />
+                                <i className="fas fa-user text-4xl text-gray-600 dark:text-gray-400" style={{display: 'none'}}></i>
                             </div>
                         </div>
                     </div>
@@ -239,12 +242,12 @@ const HeroSection = () => {
                             View My Work
                         </button>
                         <a
-                            href="./assets/resume.pdf"
-                            download="Aditya_Bhagat_Resume.pdf"
+                            href="https://drive.google.com/file/d/1FDKgWv-x9UdbJmdiQjoWTB-TWbnkOPWu/view?usp=drive_link"
+                            download="resume.pdf"
                             className="px-8 py-4 border-2 border-primary-500 text-primary-500 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-105"
                         >
                             <i className="fas fa-download mr-2"></i>
-                            Download Resume
+                            View My Resume
                         </a>
                     </div>
 
@@ -253,7 +256,7 @@ const HeroSection = () => {
                         <a href="https://www.linkedin.com/in/adityabhagat22/" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors duration-200 transform hover:scale-110">
                             <i className="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/adityabhagat" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors duration-200 transform hover:scale-110">
+                        <a href="https://github.com/adityakumar7323" target="_blank" rel="noopener noreferrer" className="text-2xl text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors duration-200 transform hover:scale-110">
                             <i className="fab fa-github"></i>
                         </a>
                         <a href="mailto:adityakumar4092@gmail.com" className="text-2xl text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors duration-200 transform hover:scale-110">
@@ -299,7 +302,7 @@ const AboutSection = () => {
                             <div className="w-full h-96 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-1">
                                 <div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-2xl flex items-center justify-center">
                                     <i className="fas fa-user text-6xl text-gray-600 dark:text-gray-400"></i>
-                                    {/* Replace with actual image: <img src="./assets/images/about.jpg" alt="About Aditya" className="w-full h-full rounded-2xl object-cover" /> */}
+                                    {<img src="./assets/images/aditya.png" alt="About Aditya" className="w-full h-full rounded-2xl object-cover" />}
                                 </div>
                             </div>
                             
@@ -1258,7 +1261,7 @@ const GallerySection = () => {
     const galleryImages = [
         {
             id: 1,
-            src: './assets/images/profile-main.jpg',
+            src: './assets/images/Aditya.png',
             alt: 'Aditya Bhagat - Professional Photo',
             title: 'Professional Portrait',
             category: 'Profile',
@@ -1266,7 +1269,7 @@ const GallerySection = () => {
         },
         {
             id: 2,
-            src: './assets/images/college-life.jpg',
+            src: './assets/images/collegelife.jpg',
             alt: 'College Life at Chandigarh Engineering College',
             title: 'College Life',
             category: 'Education',
@@ -1290,7 +1293,7 @@ const GallerySection = () => {
         },
         {
             id: 5,
-            src: './assets/images/competition-win.jpg',
+            src: './assets/images/college.png',
             alt: 'Technical Quiz Competition',
             title: 'Competition Achievement',
             category: 'Achievements',
@@ -1298,7 +1301,7 @@ const GallerySection = () => {
         },
         {
             id: 6,
-            src: './assets/images/cultural-event.jpg',
+            src: './assets/images/cultural.jpg',
             alt: 'Cultural Event Performance',
             title: 'Cultural Activities',
             category: 'Cultural',
@@ -1673,7 +1676,7 @@ const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
                     {/* Brand */}
                     <div>
                         <h3 className="text-2xl font-bold mb-4">
@@ -1769,13 +1772,12 @@ const App = () => {
                 <ProjectsSection />
                 <EducationSection />
                 <AchievementsSection />
-                <ImageManagementSection />
                 <GallerySection />
                 <ContactSection />
-                
-                {/* Image Management Section - Floating Button */}
-                <ImageManagementSection />
                 <Footer />
+                
+                {/* Image Management Floating Button */}
+                <ImageManagementSection />
             </div>
         </ThemeProvider>
     );
